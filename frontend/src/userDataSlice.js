@@ -244,6 +244,8 @@ export const userDataSlice = createSlice({
         href: "http://imrul.xyz",
       },
     ],
+    contact: {
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getAllData.fulfilled, (state, action) => {
