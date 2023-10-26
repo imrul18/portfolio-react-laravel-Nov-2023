@@ -21,9 +21,7 @@ export const userDataSlice = createSlice({
         cardTitle: "B.Tech, Computer Science",
         cardSubtitle: "XYZ University, City",
         cardDetailedText: "CGPA - 9.5",
-        icon: {
-          src: "images/education/lorem-ipsum.png",
-        },
+        icon: "images/education/lorem-ipsum.png",
       },
       {
         title: "Jun 20XX - Jun 20YY",
@@ -119,6 +117,7 @@ export const userDataSlice = createSlice({
       about:
         " This Afnan is where you can describe about **yourself**. The more you describe about yourself, the better it is!\n\n\nExtra Information about you, like hobbies and your goals.\nExample Paragraph: I am passionate about my work. Because I love what I do, I have a steady source of motivation that drives me to do my best. In my last job, this passion led me to challenge myself daily and learn new skills that helped me to do better work. For example, I taught myself how to use Photoshop to improve the quality of our photos and graphics. I soon became the go-to person for any design needs.",
       imageSource: "images/about/profile.png",
+      resume: "https://www.orimi.com/pdf-test.pdf",
     },
     experience: [
       {
@@ -249,7 +248,9 @@ export const userDataSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getAllData.fulfilled, (state, action) => {
-      state = action.payload;
+      console.log("🚀 ~ file: userDataSlice.js:253 ~ builder.addCase ~ action:", action?.payload)
+      state.home = action?.payload?.home;
+      state.education = action?.payload?.education;
     });
   },
 });

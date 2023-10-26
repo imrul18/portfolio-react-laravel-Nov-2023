@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
 import { useSelector } from "react-redux";
 import Fade from "react-reveal";
 import FallbackSpinner from "./FallbackSpinner";
@@ -14,12 +13,12 @@ const styles = {
     whiteSpace: "pre-wrap",
     textAlign: "left",
     fontSize: "1.2em",
-    fontWeight: 500,
+    fontWeight: 800,
   },
   introImageContainer: {
-    margin: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    margin: 2,
+    // justifyContent: "center",
+    // alignItems: "center",
     // display: "flex",
   },
 };
@@ -27,8 +26,6 @@ const styles = {
 function Contact(props) {
   const { header } = props;
   const data = useSelector((state) => state?.data?.contact);
-
-  const parseIntro = (text) => <ReactMarkdown children={text} />;
 
   return (
     <>
@@ -39,7 +36,10 @@ function Contact(props) {
             <Fade>
               <Row>
                 <Col style={styles.introTextContainer}>
-                  {parseIntro(data.about)}
+                  <div>Afnan</div>
+                  <div>Afnan</div>
+                  <div>Afnan</div>
+                  <div>Afnan</div>
                 </Col>
                 <Col style={styles.introImageContainer}>
                   <input
